@@ -8,7 +8,6 @@ import { UserAuth } from "../context/AuthenticationContext";
 import validation from "../helpers/validation";
 export default function SignUp() {
   const { currentUser, logup, errorFirebase, loading } = UserAuth();
-  console.log(`laodign:${loading}`);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErros] = useState({});

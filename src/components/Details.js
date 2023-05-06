@@ -13,7 +13,6 @@ export default function Details({ detail, handeShowDetails }) {
   function rate(num) {
     const newNum = num / 2;
     const intNum = Math.floor(newNum);
-    console.log(intNum);
     for (var i = 1; i <= newNum; i++) {
       stars += <RateStart icon={faStar} />;
     }
@@ -58,10 +57,8 @@ const DetailsContainer = styled.div`
   padding: 0;
   margin-left: auto;
   position: relative;
+
   @media (max-width: 992px) {
-    width: 100%;
-  }
-  @media (max-width: 768px) {
     flex-direction: column-reverse;
     align-items: flex-start;
     width: 100%;
@@ -102,7 +99,7 @@ const ImageContainer = styled.div`
     );
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     width: 100%;
     ::after {
       background: rgb(0, 0, 0);
@@ -125,7 +122,8 @@ const MovieInfoContainer = styled.div`
   padding-left: 50px;
   width: 70%;
   gap: 30px;
-  @media (max-width: 768px) {
+
+  @media (max-width: 992px) {
     align-items: center;
     width: 90%;
     margin: 0 auto;

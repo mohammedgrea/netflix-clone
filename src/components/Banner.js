@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components/macro";
 
 export default function Banner({ movie }) {
-  console.log(movie);
   return (
     <BannerContainer movie={movie}>
       <Container>

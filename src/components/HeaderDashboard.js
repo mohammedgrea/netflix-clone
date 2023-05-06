@@ -10,7 +10,6 @@ export default function HeaderDashboard() {
   const [changeHeaderBg, setChangeHeaderBg] = useState(false);
 
   window.addEventListener("scroll", () => {
-    console.log(window.scrollY);
     if (window.scrollY >= 100) {
       setChangeHeaderBg(true);
     } else {
