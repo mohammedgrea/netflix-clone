@@ -39,6 +39,9 @@ export default function Row({ request, title, original, id }) {
         handeShowDetails(true);
       }}
     >
+      {/* <DispalyTitle>
+        {poster.original_title || poster.original_name}
+      </DispalyTitle> */}
       <img
         src={`https://image.tmdb.org/t/p/w500${
           original
@@ -104,6 +107,10 @@ const ScrolLeft = styled(FontAwesomeIcon)`
   background-color: rgba(0, 0, 0, 0.7);
   padding-inline: 10px;
   z-index: 10;
+  transition: var(--mainTransition);
+  &:hover {
+    color: red;
+  }
   @media (max-width: 768px) {
     display: none;
   }
@@ -121,6 +128,10 @@ const ScrolRight = styled(FontAwesomeIcon)`
   background-color: rgba(0, 0, 0, 0.7);
   padding-inline: 10px;
   z-index: 10;
+  transition: var(--manTransiton);
+  &:hover {
+    color: red;
+  }
   @media (max-width: 768px) {
     display: none;
   }
@@ -142,6 +153,7 @@ const Posters = styled.div`
 `;
 const Poster = styled.div`
   cursor: pointer;
+  position: relative;
   > img {
     max-width: 150px;
     object-fit: cover;
@@ -150,4 +162,17 @@ const Poster = styled.div`
   &:hover {
     transform: scale(1.1);
   }
+`;
+
+const DispalyTitle = styled.div`
+  position: absolute;
+  bottom: 0px;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

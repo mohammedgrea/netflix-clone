@@ -1,3 +1,5 @@
+import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components/macro";
 
@@ -7,7 +9,11 @@ export default function Banner({ movie }) {
       <Container>
         <Ttile>{movie.title || " no name"}</Ttile>
         <Btns>
-          <Button style={{ backgroundColor: "red" }}>Play</Button>
+          <PlayButton>
+            <PlayIcon icon={faCirclePlay} />
+            Play
+          </PlayButton>
+          {/* <Button style={{ backgroundColor: "red" }}>Play</Button> */}
           <Button>My List</Button>
         </Btns>
         <Desc>
@@ -48,6 +54,28 @@ const Container = styled.div`
     margin: 0px auto;
   }
 `;
+const PlayIcon = styled(FontAwesomeIcon)`
+  padding-right: 10px;
+`;
+const PlayButton = styled.button`
+  cursor: pointer;
+  width: fit-content;
+  background-color: red;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: var(--mainTransition);
+  &:hover {
+    background-color: darkred;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
 const Ttile = styled.h1`
   text-transform: uppercase;
   font-family: var(--titleFontFamily);
@@ -62,14 +90,16 @@ const Btns = styled.div`
 
 const Button = styled.button`
   cursor: pointer;
+  width: fit-content;
   background-color: var(--mainInputColor);
-  padding: 10px 30px;
   color: white;
-  font-weight: bold;
-  border-radius: 4px;
   border: none;
   outline: none;
-  margin-right: 10px;
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
   transition: var(--mainTransition);
   &:hover {
     background-color: var(--secondaryColor);

@@ -2,6 +2,7 @@ import {
   faStarHalfStroke,
   faStar,
   faClose,
+  faCirclePlay,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
@@ -31,7 +32,10 @@ export default function Details({ detail, handeShowDetails }) {
         {/* title */}
         <Title>{detail.original_title || detail.original_name}</Title>
         <Desc>{detail.overview}</Desc>
-        <PlayButton>Play</PlayButton>
+        <PlayButton>
+          <PlayIcon icon={faCirclePlay} />
+          Play
+        </PlayButton>
         {/* description */}
         {/* rating */}
         {/* number of vote */}
@@ -77,6 +81,9 @@ const CloseBtn = styled(FontAwesomeIcon)`
   &:hover {
     background-color: red;
   }
+`;
+const PlayIcon = styled(FontAwesomeIcon)`
+  padding-right: 10px;
 `;
 const Overly = styled.div``;
 const ImageContainer = styled.div`
@@ -133,8 +140,8 @@ const MovieInfoContainer = styled.div`
 `;
 const Title = styled.div`
   font-size: 35px;
+  font-family: var(--titleFontFamily);
   font-weight: bold;
-  letter-spacing: 5px;
   @media (max-width: 992px) {
     font-size: 25px;
     letter-spacing: 0;
